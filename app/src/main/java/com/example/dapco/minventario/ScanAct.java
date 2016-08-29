@@ -20,7 +20,7 @@ public class ScanAct extends AppCompatActivity implements View.OnClickListener{
     TextView Txt_Id;
     @BindView(R.id.Et_Nom)
     EditText Et_Nom;
-    @BindView(R.id.Tipo_lista)
+    @BindView(R.id.Edt_tip)
     EditText Tipo_lista;
     @BindView(R.id.Edt_Cant)
     EditText Edt_Cant;
@@ -30,10 +30,12 @@ public class ScanAct extends AppCompatActivity implements View.OnClickListener{
     EditText Edt_fVenc;
     @BindView(R.id.Btn_Guardar)
     Button Btn_Guardar;
-
-    private Button Btn_Escan;
+    @BindView(R.id.Edt_tip)
+    EditText Edt_tip;
     Contdatos cont = new Contdatos(this);
-
+    Muestra_BusAct mb = new Muestra_BusAct();
+    private Button Btn_Escan;
+    private Ui_ui ui = new Ui_ui();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,13 +107,18 @@ public class ScanAct extends AppCompatActivity implements View.OnClickListener{
 
     //se implementa en el onClick, basado en creaFActura(Polacosv3).
     public void guardar(){
-        cont.guardar(Et_Nom.getText().toString(),Edt_Cant.getText().toString(), Edt_fVenc.getText().toString());
+        cont.save(Et_Nom.getText().toString(), Edt_Cant.getText().toString(), Edt_fVenc.getText().toString());
+
+//        cont.guardar(Txt_Id.getText().toString(),Et_Nom.getText().toString(),Edt_Cant.getText().toString(),Edt_fVenc.getText().toString(),
+//                Txt_FInicio.getText().toString(),Edt_tip.getText().toString());
+
         Toast.makeText(this, "Guardado", Toast.LENGTH_LONG).show();
-        ListaClientes.setAdapter(Ui.CargaArrayAdapter(this, CDT.ConsultaClientes()));
+        mb.ListaProductoNomb.setAdapter(ui.CargaArrayAdapter(this, cont.ConsultaProducto()));
 
         Et_Nom.setText("");
         Edt_Cant.setText("");
         Edt_fVenc.setText("");
+
     }
 
 }
