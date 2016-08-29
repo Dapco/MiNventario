@@ -17,20 +17,28 @@ public class Contdatos {
         controlDB = new SqlHelper(miContext);
     }
 
-
-    /**
     public void InsertarProducto(Producto_class Producto){
-        controlDB.InsertaCliente(Producto);
+        controlDB.InsertaProducto(Producto);
     }
-    */
+
 
     //Debe de servir para editar
-    public void guardar(String nombre, String cantidad, String fechaVenci){
+    public void guardar(String id, String nombre, String cantidad, String fechaVenci, String Fec_In, String tipo) {
+        Producto_class pro = new Producto_class();
+        pro.Id = id;
+        pro.nombre = nombre;
+        pro.cantidad = cantidad;
+        pro.Fecha_Vencimiento = fechaVenci;
+        pro.Fecha_Ingreso = Fec_In;
+        pro.tipo = tipo;
+
+    }
+
+    public void save(String nombre, String cantidad, String fechaVenci) {
         Producto_class pro = new Producto_class();
         pro.nombre = nombre;
         pro.cantidad = cantidad;
         pro.Fecha_Vencimiento = fechaVenci;
-
     }
 
     public void borrar(){
@@ -39,7 +47,11 @@ public class Contdatos {
     }
 
     public ArrayList<String> ConsultaProducto(){
-        if(controlDB.CuentaFilas());
+        if (controlDB.CuentaFilas("Producto") <= 0) {
+//            guardar("0","jumex","9","11-12-16","11-12-16","comestible");
+            save("jumex", "9", "11-12-16");
+        }
+        return controlDB.ConsultaProducto();
     }
 
 }

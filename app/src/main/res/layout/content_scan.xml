@@ -13,152 +13,152 @@
     tools:showIn="@layout/activity_scan">
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Escanear"
         android:id="@+id/Btn_Scan"
-        android:layout_marginTop="86dp"
-        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="86dp"
+        android:text="Escanear" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Id:"
         android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/Btn_Scan"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="39dp" />
+        android:layout_marginTop="39dp"
+        android:text="Id:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Nombre:"
         android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="15dp"
+        android:text="Nombre:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Tipo:"
         android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/textView2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="15dp"
+        android:text="Tipo:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Fecha Vencimiento:"
         android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView6"
         android:layout_marginTop="14dp"
-        android:layout_below="@+id/textView6"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:text="Fecha Vencimiento:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Cantidad:"
         android:id="@+id/textView5"
-        android:layout_below="@+id/textView3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="15dp" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Fecha Ingreso:"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="15dp"
+        android:text="Cantidad:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
         android:id="@+id/textView6"
-        android:layout_below="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="15dp" />
+        android:layout_below="@+id/textView5"
+        android:layout_marginTop="15dp"
+        android:text="Fecha Ingreso:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
         android:id="@+id/Txt_Id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/textView2"
-        android:layout_toRightOf="@+id/textView4"
-        android:layout_toEndOf="@+id/textView4"
         android:layout_marginLeft="24dp"
-        android:layout_marginStart="24dp" />
+        android:layout_marginStart="24dp"
+        android:layout_toEndOf="@+id/textView4"
+        android:layout_toRightOf="@+id/textView4"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/Et_Nom"
-        android:layout_below="@+id/Txt_Id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/Btn_Scan"
         android:layout_alignLeft="@+id/Txt_Id"
-        android:layout_alignStart="@+id/Txt_Id"
         android:layout_alignRight="@+id/Btn_Scan"
-        android:layout_alignEnd="@+id/Btn_Scan" />
+        android:layout_alignStart="@+id/Txt_Id"
+        android:layout_below="@+id/Txt_Id" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
         android:id="@+id/Edt_Cant"
-        android:layout_below="@+id/textView3"
-        android:layout_alignLeft="@+id/Edt_fVenc"
-        android:layout_alignStart="@+id/Edt_fVenc" />
-
-    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="date"
+        android:layout_alignLeft="@+id/Edt_fVenc"
+        android:layout_alignStart="@+id/Edt_fVenc"
+        android:layout_below="@+id/textView3"
         android:ems="10"
+        android:inputType="number" />
+
+    <EditText
         android:id="@+id/Edt_fVenc"
-        android:layout_below="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/Et_Nom"
-        android:layout_alignStart="@+id/Et_Nom" />
+        android:layout_alignStart="@+id/Et_Nom"
+        android:layout_below="@+id/textView6"
+        android:ems="10"
+        android:inputType="date" />
 
     <TextView
+        android:id="@+id/TxtFecha_Ing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/TxtFecha_Ing"
         android:layout_above="@+id/textView4"
-        android:layout_toRightOf="@+id/Txt_Id"
+        android:layout_alignEnd="@+id/Edt_fVenc"
         android:layout_alignRight="@+id/Edt_fVenc"
-        android:layout_alignEnd="@+id/Edt_fVenc" />
+        android:layout_toRightOf="@+id/Txt_Id"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
+        android:id="@+id/Btn_Guardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Guardar"
-        android:id="@+id/Btn_Guardar"
-        android:layout_marginTop="39dp"
         android:layout_below="@+id/Edt_fVenc"
+        android:layout_marginTop="43dp"
+        android:layout_toEndOf="@+id/textView4"
         android:layout_toRightOf="@+id/textView4"
-        android:layout_toEndOf="@+id/textView4" />
+        android:text="Guardar" />
 
     <EditText
+        android:id="@+id/Edt_tip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/Edt_Cant"
-        android:layout_alignStart="@+id/Edt_Cant"
-        android:layout_alignRight="@+id/Btn_Guardar"
-        android:layout_alignEnd="@+id/Btn_Guardar" />
+        android:layout_alignEnd="@+id/Edt_Cant"
+        android:layout_alignLeft="@+id/Et_Nom"
+        android:layout_alignRight="@+id/Edt_Cant"
+        android:layout_alignStart="@+id/Et_Nom"
+        android:layout_below="@+id/Et_Nom" />
 
 </RelativeLayout>

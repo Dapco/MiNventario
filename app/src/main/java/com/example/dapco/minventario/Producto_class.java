@@ -5,6 +5,7 @@ package com.example.dapco.minventario;
  */
 public class Producto_class {
 
+    public String Id;
     public String nombre;
     public String cantidad;
     public String Fecha_Ingreso;
@@ -13,14 +14,22 @@ public class Producto_class {
 
     public Producto_class(){}
 
-    public Producto_class(String nombre, String cantidad, String fecha_Ingreso, String fecha_Vencimiento){
+    public Producto_class(String Id, String nombre, String cantidad, String fecha_Ingreso, String fecha_Vencimiento) {
 
+        this.setId(Id);
         this.setNombre(nombre);
         this.setCantidad(cantidad);
         this.setFecha_Ingreso(fecha_Ingreso);
         this.setFecha_Vencimiento(fecha_Vencimiento);
     }
 
+    public String getId() {
+        return Id;
+    }
+
+    public void setId(String id) {
+        Id = id;
+    }
 
     public String getNombre() {
         return nombre;
@@ -61,5 +70,6 @@ public class Producto_class {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
 
 }

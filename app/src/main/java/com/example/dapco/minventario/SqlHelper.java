@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 /**
  * Created by Dapco on 7/15/16.
  */
@@ -18,7 +20,6 @@ public class SqlHelper extends SQLiteOpenHelper{
             "CREATE TABLE IF NOT EXISTS Producto (" +
                     "id INTEGER PRIMARY KEY NOT NULL ," +
                     "nombre TEXT," +
-                    "telefono TEXT," +
                     "cantidad TEXT," +
                     "fecha ingreso TEXT," +
                     "fecha Vencimiento TEXT," +
@@ -34,6 +35,10 @@ public class SqlHelper extends SQLiteOpenHelper{
             super(context, DB_NAME, factory, DB_VERSION);
     }
 
+    public SqlHelper(Context context) {
+        super(context, DB_NAME, null, DB_VERSION);
+    }
+
     @Override
     public void onCreate(SQLiteDatabase db){
         db.execSQL(CREA_TABLA_PRODUCTO);
@@ -44,7 +49,6 @@ public class SqlHelper extends SQLiteOpenHelper{
         db.execSQL("DROP TABLE IF EXIST Producto");
         onCreate(db);
     }
-
 
     public int CuentaFilas(String tabla){
         int elementos = 0;
@@ -66,6 +70,7 @@ public class SqlHelper extends SQLiteOpenHelper{
 
     public int InsertaProducto (Producto_class producto){
         ContentValues values = new ContentValues();//Objeto ContentValues, permite almacenar columnas
+        values.put("Id", producto.Id);
         values.put("Nombre", producto.nombre);
         values.put("Cantidad",producto.cantidad);
         values.put("Fecha Inicio",producto.Fecha_Ingreso);
@@ -78,5 +83,54 @@ public class SqlHelper extends SQLiteOpenHelper{
         return (int) ProductoID;
     }
 
+    /*
+        //actualizar
+        public int actualizar(Producto_class producto) {
+            db = this.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put("Id", producto.Id);
+            values.put("Nombre", producto.nombre);
+            values.put("Cantidad",producto.cantidad);
+            values.put("Fecha Inicio",producto.Fecha_Ingreso);
+            values.put("Fecha vencimiento", producto.Fecha_Vencimiento);
+
+    // updating row
+            return db.update(producto, values, KEY_ID + " = ?",
+                    new String[]{String.valueOf(producto.getId())});
+        }
+    */
+    //borrado
+    public void borrar(Producto_class producto) {
+        db = this.getWritableDatabase();
+        db.delete("Productos", producto + " = ?",
+                new String[]{String.valueOf(producto.getId())});
+        db.close();
+    }
+
+    //
+    public ArrayList<String> ConsultaProducto() {
+        String Id = "";
+        String Nombre = "";
+        String cantidad = "";
+        String Fecha_Ingreso = "";
+        String fecha_Vencimiento = "";
+        String tipo = "";
+
+        ArrayList<String> ListaProducto = new ArrayList<String>();
+        db = this.getReadableDatabase();
+        Cursor elCursor = db.rawQuery("SELECT * FROM Producto", null);
+        while (elCursor.moveToNext()) {
+            Id = elCursor.getString(elCursor.getColumnIndex("nombre"));
+            Nombre = elCursor.getString(elCursor.getColumnIndex("nombre"));
+            cantidad = elCursor.getColumnName(elCursor.getColumnIndex("cantidad"));
+            Fecha_Ingreso = elCursor.getColumnName(elCursor.getColumnIndex("Fecha_Ingreso"));
+            fecha_Vencimiento = elCursor.getColumnName(elCursor.getColumnIndex("fecha_Vencimiento"));
+            tipo = elCursor.getColumnName(elCursor.getColumnIndex("tipo"));
+
+        }//Fin while
+        elCursor.close();
+        db.close();
+        return ListaProducto;
+    }
 
 }
